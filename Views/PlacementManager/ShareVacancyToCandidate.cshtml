@@ -1,0 +1,53 @@
+﻿@model HRRequisition.Models.Vacancy
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form-bordered" action="~/PlacementManager/VacancyMatchingInformation1" method="post">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ReceiverEmail</label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="Receiver" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Subject</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Subject" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Body</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Body" value="@Model.Requirements" required>
+                            @*<input type="text" class="form-control" name="Body" value="@Model.MinMarks" required>
+                            <input type="text" class="form-control" name="Body" value="@Model.ContractDocs" required>
+                            <input type="text" class="form-control" name="Body" value="@Model.MinExperience" required>*@
+                        </div>
+                    </div>
+                   
+        
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-6">
+                            <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">Send</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>

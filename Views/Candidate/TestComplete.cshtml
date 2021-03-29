@@ -1,0 +1,48 @@
+﻿@using System.Data
+@{
+    ViewBag.Title = "TestComplete";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<h1> Congratulations Your Test Has been Completed Successfully!!!</h1>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Test Result</h2>
+            </header>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover mb-none">
+                        <thead>
+                            <tr>
+                                <th>Test</th>
+                                <th>Total Marks</th>
+                                <th>Obtain marks</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <tr>
+                                    <td>@Model.TestID</td>
+                                    <td>@Model.TotalMarks</td>
+                                    <td>@Model.ObtainedMarks</td>
+
+
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

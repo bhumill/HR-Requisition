@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "VacancyListOngoing";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">VacanyList</h2>
+            </header>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover mb-none">
+                        <thead>
+                            <tr>
+
+                                <th>MinMarks</th>
+                                <th>Requirements</th>
+                                <th>MinExperience</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Rows.Count; i++)
+                            {
+                                <tr>
+
+                                    <td>@Model.Rows[i]["MinMarks"]</td>
+                                    <td>@Model.Rows[i]["Requirements"]</td>
+                                    <td>@Model.Rows[i]["MinExperience"]</td>
+                                    <td>@Model.Rows[i]["Status"]</td>
+                                    <td>
+                                        <a href="/PlacementManager/VacancyDetails?SID=@Model.Rows[i]["VacancyID"]">Edit</a>
+                                        <a href="/PlacementManager/VacancyMatching?SID=@Model.Rows[i]["VacancyID"]">VacancyMatching</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+

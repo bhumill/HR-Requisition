@@ -1,0 +1,47 @@
+﻿@using System.Data
+@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    DataTable dtDomain = ViewBag.dtDomain;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">All Skills</h2>
+            </header>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover mb-none">
+                        <thead>
+                            <tr>
+                                <th>Skill ID</th>
+                                <th>Domain Name</th>
+                                <th>Skill Name</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @for (int i = 0; i < Model.Rows.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Rows[i]["SkillID"]</td>
+                                    <td>@Model.Rows[i]["DomainName"]</td>
+                                    <td>@Model.Rows[i]["SkillName"]</td>
+
+                                    <td>
+                                        <a href="/Admin/SkillEdit?SID=@Model.Rows[i]["SkillID"]">Edit</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

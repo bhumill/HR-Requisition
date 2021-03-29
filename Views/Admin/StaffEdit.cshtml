@@ -1,0 +1,78 @@
+﻿@model HRRequisition.Models.Staff
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+   // DataTable dtStaff = ViewBag.dtStaff;
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Staff Edit</h2>
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form-bordered" action="/Admin/StaffEditSubmit" method="post">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Name</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Name" value="@Model.Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Email</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Email" value="@Model.Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Mobile</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Mobile" pattern="[789][0-9]{9}" minlength="10" maxlength="10" value=@Model.Mobile required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Username</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Username" value="@Model.Username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Password</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="Password" value="@Model.Password" minlength="8" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Active</label>
+                        <div class="col-md-6">
+                            <input type="checkbox" name="IsActive" value="1" @(Model.IsActive ? "checked=checked" : "") required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">StaffType</label>
+                        <div class="col-md-6">
+                            <select name="StaffType" required>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="HR Manager">HR Manager</option>
+                                <option value="Placement Manager">Placement Manager</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-6">
+                            <input name="StaffID" type="hidden" value=@Model.StaffID>
+                            <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">UPDATE</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>

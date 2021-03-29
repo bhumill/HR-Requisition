@@ -1,0 +1,132 @@
+﻿@model HRRequisition.Models.Vacancy
+@using System.Data
+
+@{
+    ViewBag.Title = "VacancyEdit";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    DataTable dtSkill = ViewBag.dtSkill;
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Vacancy Edit</h2>
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form-bordered" action="VacancyEditSubmit" method="post">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">MinMarks</label>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" name="MinMarks" value="@Model.MinMarks" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Requirements</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Requirements" value="@Model.Requirements" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ContractDocs</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="ContractDocs" value="@Model.ContractDocs" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">MinExperience</label>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" name="MinExperience" value="@Model.MinExperience" required>
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <label class="col-md-3 control-label">Status</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="Status" value="@Model.Status"/>
+                            </div>
+                        </div>*@
+
+                    <input type="hidden" name="CompanyID" value="@Model.CompanyID" />
+                    <input type="hidden" name="VacancyID" value="@Model.VacancyID" />
+                    <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">Update</button>
+
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+<div class="panel-body">
+    <form class="form-horizontal form-bordered" action="VacancySkillAdd" method="post">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover mb-none">
+                    <thead>
+                        <tr>
+
+                            <th>My Skills</th>
+                            @*<th>Action</th>*@
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @for (int i = 0; i < dtSkill.Rows.Count; i++)
+                        {
+                            <tr>
+
+                                <td>@dtSkill.Rows[i]["SkillName"]</td>
+
+
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover mb-none">
+                    <thead>
+                        <tr>
+
+                            <th>Skill</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="SkillID">
+                                    @for (int i = 0; i < dtSkill.Rows.Count; i++)
+                                    {
+                                        <option value='@dtSkill.Rows[i]["SkillID"]'>@dtSkill.Rows[i]["SkillName"]</option>
+                                    }
+                                </select>
+                            </td>
+                            <td>
+                                <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">Add</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <input type="hidden" name="CompanyID" value="@Model.CompanyID" />
+        <input type="hidden" name="VacancyID" value="@Model.VacancyID" />
+    </form>
+</div>
+
+

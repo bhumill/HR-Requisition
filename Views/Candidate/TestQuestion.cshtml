@@ -1,0 +1,72 @@
+﻿
+@model HRRequisition.Models.TestQuestion
+
+@using System.Data
+@{
+    ViewBag.Title = "TestGenerate";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    HRRequisition.Models.Question q = ViewBag.q;
+    HRRequisition.Models.TestQuestion tq = ViewBag.tq;
+    int no = ViewBag.no;
+
+}
+
+
+
+<div class="col-md-6">
+    <section class="panel">
+        <header class="panel-heading">
+            <div class="panel-actions">
+                <a href="#" class="fa fa-caret-down"></a>
+                <a href="#" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title">Hover Rows</h2>
+        </header>
+        <form action="TestQuestionSubmit" method="post">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-none">
+                        <thead>
+                            <tr>
+                                <th>@ViewBag.q.Title</th>
+                                @*<th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="Answer" value="1" />&nbsp;&nbsp;&nbsp;@ViewBag.q.Option1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="Answer" value="2" />&nbsp;&nbsp;&nbsp;@ViewBag.q.Option2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="Answer" value="3" />&nbsp;&nbsp;&nbsp;@ViewBag.q.Option3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="Answer" value="4" />&nbsp;&nbsp;&nbsp;@ViewBag.q.Option4
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="col-md-6">
+                        <input type="hidden" name="no" value="@ViewBag.no" />
+                        <input type="hidden" name="TestQuestionID" value="@ViewBag.tq.TestQuestionID" />
+                        <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">NEXT</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
