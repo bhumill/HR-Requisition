@@ -19,16 +19,18 @@ And candidates gets the mail about the matched vacancies.
 # Technologies Used:
 
 Languages:
+
 (1) C#
 
 (2) Html/css
 
 (3) JavaScript
 
-Framework:
+# Framework:
 .Net MVC
 
-IDE : Visual Studio
+# IDE :
+Visual Studio
 
 # Database used:
 MSSql
