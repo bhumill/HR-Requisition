@@ -20,7 +20,9 @@ And candidates gets the mail about the matched vacancies.
 
 Languages:
 (1) C#
+
 (2) Html/css
+
 (3) JavaScript
 
 Framework:
