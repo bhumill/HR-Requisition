@@ -30,7 +30,7 @@ Languages:
 .Net MVC
 
 # IDE :
-Visual Studio
+Visual Studio 2015
 
 # Database used:
 MSSql
